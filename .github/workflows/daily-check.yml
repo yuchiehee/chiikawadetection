@@ -1,4 +1,4 @@
-name: Daily Chiikawa Product Checker
+name: Chiikawa Product Checker
 
 on:
   schedule:
