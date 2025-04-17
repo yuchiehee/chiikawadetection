@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 # Discord Webhook（請改成你的）
-DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/你的webhook網址"
+DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1362386245208248370/CyJEMouBH4FRzd_PkfkRCq9T6G0aw9Sgo-4l-Nbv0Er3VMRvmcD0oynPtzakXeEFQgY5"
 
 # Shopify API 分頁基礎網址
 BASE_API = "https://chiikawamarket.jp/products.json?page={}"
