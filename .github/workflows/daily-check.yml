@@ -2,7 +2,8 @@ name: Daily Chiikawa Product Checker
 
 on:
   schedule:
-    - cron: '0 9 * * *'  # 每天早上 9 點 UTC 執行（台灣時間約下午 5 點）
+    - cron: '0 * * * *' #每整點跑一次
+
   workflow_dispatch:
 
 jobs:
