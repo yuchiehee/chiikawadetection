@@ -82,10 +82,13 @@ def commit_json_to_repo():
         subprocess.run(["git", "config", "--global", "user.name", "github-actions"], check=True)
         subprocess.run(["git", "config", "--global", "user.email", "actions@github.com"], check=True)
         subprocess.run(["git", "add", JSON_PATH], check=True)
-        subprocess.run(["git", "commit", "-m", "Update latest product list"], check=True)
-        subprocess.run(["git", "push"], check=True)
+        result = subprocess.run(["git", "commit", "-m", "Update latest product list"], capture_output=True, text=True)
+        if result.returncode == 0:
+            print("✅ 商品清單已更新並提交")
+        else:
+            print("ℹ️ 無需更新商品清單（無內容變動）")
     except Exception as e:
-        print(f"⚠️ Git commit failed: {e}")
+        print(f"❌ Git 操作失敗：{e}")
 
 # 🚀 主流程
 # send_to_discord("🤖 Chiikawa 商品偵測器啟動囉！")
