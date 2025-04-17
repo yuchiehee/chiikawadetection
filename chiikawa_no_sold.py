@@ -60,7 +60,12 @@ def save_current_list(products, path):
 # 發送 Discord 訊息
 def send_to_discord(message):
     payload = {"content": message}
-    requests.post(DISCORD_WEBHOOK_URL, json=payload)
+    res = requests.post(DISCORD_WEBHOOK_URL, json=payload)
+    if res.status_code == 204:
+        print("✅ 成功發送到 Discord")
+    else:
+        print(f"⚠️ 發送失敗！Status code: {res.status_code}")
+        print(res.text)
 
 # 比對上下架
 def compare_product_lists(old_list, new_list):
