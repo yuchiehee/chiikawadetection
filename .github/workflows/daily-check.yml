@@ -1,5 +1,8 @@
 name: Chiikawa Product Checker
 
+permissions:
+  contents: write
+
 on:
   schedule:
     - cron: '0 * * * *' #每整點跑一次
