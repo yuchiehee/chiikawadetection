@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import time
 import json
 from pathlib import Path
+import subprocess
 
 # Discord Webhook（請改成你的）
 DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1362386245208248370/CyJEMouBH4FRzd_PkfkRCq9T6G0aw9Sgo-4l-Nbv0Er3VMRvmcD0oynPtzakXeEFQgY5"
@@ -70,7 +71,20 @@ def compare_product_lists(old_list, new_list):
     removed_items = [old_ids[i] for i in old_ids if i not in new_ids]
     return new_items, removed_items
 
+# 將最新商品清單加入 Git commit
+def commit_json_to_repo():
+    try:
+        subprocess.run(["git", "config", "--global", "user.name", "github-actions"], check=True)
+        subprocess.run(["git", "config", "--global", "user.email", "actions@github.com"], check=True)
+        subprocess.run(["git", "add", JSON_PATH], check=True)
+        subprocess.run(["git", "commit", "-m", "Update latest product list"], check=True)
+        subprocess.run(["git", "push"], check=True)
+    except Exception as e:
+        print(f"⚠️ Git commit failed: {e}")
+
 # 🚀 主流程
+send_to_discord("🤖 Chiikawa 商品偵測器啟動囉！")
+
 print("🚀 抓取目前商品清單...")
 new_products = get_all_product_infos()
 old_products = load_previous_list(JSON_PATH)
@@ -105,3 +119,4 @@ print(final_message)
 
 # 儲存目前清單供下次比較
 save_current_list(new_products, JSON_PATH)
+commit_json_to_repo()
