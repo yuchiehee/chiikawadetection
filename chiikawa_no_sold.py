@@ -88,7 +88,7 @@ def commit_json_to_repo():
         print(f"⚠️ Git commit failed: {e}")
 
 # 🚀 主流程
-send_to_discord("🤖 Chiikawa 商品偵測器啟動囉！")
+# send_to_discord("🤖 Chiikawa 商品偵測器啟動囉！")
 
 print("🚀 抓取目前商品清單...")
 new_products = get_all_product_infos()
