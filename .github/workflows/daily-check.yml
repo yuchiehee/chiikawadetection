@@ -24,4 +24,4 @@ jobs:
 
       - name: Run script
         run: |
-          python chiikawa no sold.py
+          python chiikawa_no_sold.py
