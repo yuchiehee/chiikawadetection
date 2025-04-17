@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 import subprocess
 
-# Discord Webhook（請改成你的）
+# Discord Webhook
 DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1362386245208248370/CyJEMouBH4FRzd_PkfkRCq9T6G0aw9Sgo-4l-Nbv0Er3VMRvmcD0oynPtzakXeEFQgY5"
 
 # Shopify API 分頁基礎網址
@@ -115,7 +115,7 @@ if removed_items:
         )
 
 if not new_items and not removed_items:
-    messages = ["✅ 目前商品無變動，嗚啦"]
+    messages = ["✅ 目前商品無異動，嗚啦"]
 
 # 發送一次 Discord 訊息
 final_message = "\n".join(messages)
