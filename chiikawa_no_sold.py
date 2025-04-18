@@ -123,11 +123,6 @@ def send_embeds(products, status="new"):
                 "fields": [
                     {
                         "name": "商品編號",
-                        "value": f"`{p['id']}`",
-                        "inline": False
-                    },
-                    {
-                        "name": "SKU",
                         "value": f"{p.get('sku', '無')}",
                         "inline": False
                     }
@@ -157,15 +152,15 @@ print(f"📊 目前商品數量: {len(new_products)}，開始比對上下架..."
 new_items, removed_items = compare_product_lists(old_products, new_products)
 
 if new_items:
-    send_to_discord("🆕 **新上架商品**")
+    send_to_discord("🆕 **新上架商品** 🆕")
     send_embeds(new_items, status="new")
 
 if removed_items:
-    send_to_discord("⚠️ **以下商品被下架**")
+    send_to_discord("⚠️ **以下商品被下架** ⚠️")
     send_embeds(removed_items, status="removed")
 
 if not new_items and not removed_items:
-    send_to_discord("✅ 目前商品無變動，嗚啦")
+    send_to_discord("✅ 目前商品無變動，嗚啦 ✅")
 
 # 儲存目前清單供下次比較
 save_current_list(new_products, JSON_PATH)
