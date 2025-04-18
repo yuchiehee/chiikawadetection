@@ -90,6 +90,19 @@ def commit_json_to_repo():
     except Exception as e:
         print(f"❌ Git 操作失敗：{e}")
 
+# 防止超過dc字數上限
+def send_long_message(message, chunk_size=1900):
+    # Discord 限制 content 最多 2000 字元，留點 buffer
+    for i in range(0, len(message), chunk_size):
+        chunk = message[i:i + chunk_size]
+        payload = {"content": chunk}
+        res = requests.post(DISCORD_WEBHOOK_URL, json=payload)
+        if res.status_code == 204:
+            print("✅ 成功發送一段訊息")
+        else:
+            print(f"⚠️ 發送失敗 {res.status_code}：{res.text}")
+
+
 # 🚀 主流程
 # send_to_discord("🤖 Chiikawa 商品偵測器啟動囉！")
 
@@ -122,7 +135,7 @@ if not new_items and not removed_items:
 
 # 發送一次 Discord 訊息
 final_message = "\n".join(messages)
-send_to_discord(final_message)
+send_long_message(final_message)
 print(final_message)
 
 # 儲存目前清單供下次比較
