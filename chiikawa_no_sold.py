@@ -102,6 +102,38 @@ def send_long_message(message, chunk_size=1900):
         else:
             print(f"⚠️ 發送失敗 {res.status_code}：{res.text}")
 
+# 傳送embeds
+def send_embeds(products, status="new"):
+    status_emoji = "🆕" if status == "new" else "⚠️"
+    color = 0x2ecc71 if status == "new" else 0xe74c3c  # 綠 / 紅
+
+    for i in range(0, len(products), 10):  # Discord embeds 一次最多 10 個
+        embeds = []
+        for p in products[i:i+10]:
+            embed = {
+                "title": f"{status_emoji} {p['name']}",
+                "url": p["url"],
+                "color": color,
+                "fields": [
+                    {
+                        "name": "商品編號",
+                        "value": f"`{p['id']}`",
+                        "inline": False
+                    }
+                ],
+                "image": {
+                    "url": p["image"]
+                }
+            }
+            embeds.append(embed)
+
+        payload = {"embeds": embeds}
+        res = requests.post(DISCORD_WEBHOOK_URL, json=payload)
+        if res.status_code == 204:
+            print(f"✅ 發送 {status} embeds 成功")
+        else:
+            print(f"⚠️ 發送 {status} embeds 失敗：{res.status_code} - {res.text}")
+
 
 # 🚀 主流程
 # send_to_discord("🤖 Chiikawa 商品偵測器啟動囉！")
@@ -117,21 +149,13 @@ new_items, removed_items = compare_product_lists(old_products, new_products)
 messages = []
 
 if new_items:
-    messages.append("🆕 **新上架商品**")
-    for p in new_items:
-        messages.append(
-            f"\n🧸 {p['name']}\n📷 {p['image']}\n🔗 {p['url']}\n🆔 `{p['id']}`"
-        )
+    send_embeds(new_items, status="new")
 
 if removed_items:
-    messages.append("⚠️ **以下商品被下架**")
-    for p in removed_items:
-        messages.append(
-            f"\n🧸 {p['name']}\n📷 {p['image']}\n🔗 {p['url']}\n🆔 `{p['id']}`"
-        )
+    send_embeds(removed_items, status="removed")
 
 if not new_items and not removed_items:
-    messages = ["✅ 目前商品無異動，嗚啦"]
+    send_to_discord("✅ 目前商品無變動，嗚啦")
 
 # 發送一次 Discord 訊息
 final_message = "\n".join(messages)
