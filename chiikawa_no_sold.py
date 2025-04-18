@@ -30,16 +30,22 @@ def get_all_product_infos():
         for product in products:
             name = product.get("title", "未知商品")
             handle = product.get("handle")
+            
             images = product.get("images", [])
             image_url = images[0].get("src", "") if images else ""
-            product_id = product.get("variants", [{}])[0].get("sku", "未知 SKU")
+            
+            variant = product.get("variants", [{}])[0]
+            product_id = str(variant.get("id", "未知編號"))
+            product_sku = variant.get("sku", "（無 SKU）")
+
             if handle:
                 product_url = f"https://chiikawamarket.jp/zh-hant/products/{handle}"
                 all_products.append({
                     "name": name,
                     "url": product_url,
                     "image": image_url,
-                    "id": product_id
+                    "id": product_id,
+                    "sku": product_sku
                 })
         page += 1
         time.sleep(0.5)
@@ -118,6 +124,11 @@ def send_embeds(products, status="new"):
                     {
                         "name": "商品編號",
                         "value": f"`{p['id']}`",
+                        "inline": False
+                    },
+                    {
+                        "name": "SKU",
+                        "value": f"{p.get('sku', '無')}",
                         "inline": False
                     }
                 ],
