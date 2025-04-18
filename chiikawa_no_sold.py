@@ -32,7 +32,7 @@ def get_all_product_infos():
             handle = product.get("handle")
             images = product.get("images", [])
             image_url = images[0].get("src", "") if images else ""
-            product_id = str(product.get("variants", [{}])[0].get("id", "未知編號"))
+            product_id = product.get("variants", [{}])[0].get("sku", "未知 SKU")
             if handle:
                 product_url = f"https://chiikawamarket.jp/zh-hant/products/{handle}"
                 all_products.append({
