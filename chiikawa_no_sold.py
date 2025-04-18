@@ -91,10 +91,12 @@ def commit_json_to_repo():
         result = subprocess.run(["git", "commit", "-m", "Update latest product list"], capture_output=True, text=True)
         if result.returncode == 0:
             print("✅ 商品清單已更新並提交")
+            subprocess.run(["git", "push"], check=True)
         else:
             print("ℹ️ 無需更新商品清單（無內容變動）")
     except Exception as e:
         print(f"❌ Git 操作失敗：{e}")
+
 
 # 防止超過dc字數上限
 def send_long_message(message, chunk_size=1900):
