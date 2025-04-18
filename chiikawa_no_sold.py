@@ -145,9 +145,6 @@ old_products = load_previous_list(JSON_PATH)
 print(f"📊 目前商品數量: {len(new_products)}，開始比對上下架...")
 new_items, removed_items = compare_product_lists(old_products, new_products)
 
-# 整理訊息
-messages = []
-
 if new_items:
     send_to_discord("🆕 **新上架商品**")
     send_embeds(new_items, status="new")
@@ -158,11 +155,6 @@ if removed_items:
 
 if not new_items and not removed_items:
     send_to_discord("✅ 目前商品無變動，嗚啦")
-
-# 發送一次 Discord 訊息
-final_message = "\n".join(messages)
-send_long_message(final_message)
-print(final_message)
 
 # 儲存目前清單供下次比較
 save_current_list(new_products, JSON_PATH)
