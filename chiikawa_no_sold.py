@@ -149,9 +149,11 @@ new_items, removed_items = compare_product_lists(old_products, new_products)
 messages = []
 
 if new_items:
+    send_to_discord("🆕 **新上架商品**")
     send_embeds(new_items, status="new")
 
 if removed_items:
+    send_to_discord("⚠️ **以下商品被下架**")
     send_embeds(removed_items, status="removed")
 
 if not new_items and not removed_items:
