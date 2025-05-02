@@ -1,5 +1,124 @@
 [
   {
+    "name": "ちいかわ リピペタ（ちいかわ＆モモンガ）",
+    "url": "https://chiikawamarket.jp/zh-hant/products/4901770792163",
+    "image": "https://cdn.shopify.com/s/files/1/0626/7142/1681/files/4901770792163_1.jpg?v=1745839592",
+    "id": "46094000128241",
+    "sku": "4901770792163"
+  },
+  {
+    "name": "ちいかわ リピペタ（ちいかわ＆ハチワレ＆うさぎ）",
+    "url": "https://chiikawamarket.jp/zh-hant/products/4901770792149",
+    "image": "https://cdn.shopify.com/s/files/1/0626/7142/1681/files/4901770792149_1.jpg?v=1745839753",
+    "id": "46094000062705",
+    "sku": "4901770792149"
+  },
+  {
+    "name": "ちいかわ リピペタ（あのこ＆でかつよ）",
+    "url": "https://chiikawamarket.jp/zh-hant/products/4901770792132",
+    "image": "https://cdn.shopify.com/s/files/1/0626/7142/1681/files/4901770792132_1.jpg?v=1745839785",
+    "id": "46094000029937",
+    "sku": "4901770792132"
+  },
+  {
+    "name": "ちいかわ リピペタ（ハチワレ＆うさぎ）",
+    "url": "https://chiikawamarket.jp/zh-hant/products/4901770792156",
+    "image": "https://cdn.shopify.com/s/files/1/0626/7142/1681/files/4901770792156_1.jpg?v=1745839720",
+    "id": "46094000095473",
+    "sku": "4901770792156"
+  },
+  {
+    "name": "ちいかわ リピペタ（古本屋）",
+    "url": "https://chiikawamarket.jp/zh-hant/products/4901770792125",
+    "image": "https://cdn.shopify.com/s/files/1/0626/7142/1681/files/4901770792125_1.jpg?v=1745839817",
+    "id": "46093999997169",
+    "sku": "4901770792125"
+  },
+  {
+    "name": "ちいかわ リピペタ（モモンガ）",
+    "url": "https://chiikawamarket.jp/zh-hant/products/4901770792118",
+    "image": "https://cdn.shopify.com/s/files/1/0626/7142/1681/files/4901770792118_1.jpg?v=1745839853",
+    "id": "46093999964401",
+    "sku": "4901770792118"
+  },
+  {
+    "name": "ちいかわ リピペタ（くりまんじゅう）",
+    "url": "https://chiikawamarket.jp/zh-hant/products/4901770792095",
+    "image": "https://cdn.shopify.com/s/files/1/0626/7142/1681/files/4901770792095_1.jpg?v=1745839913",
+    "id": "46093999898865",
+    "sku": "4901770792095"
+  },
+  {
+    "name": "ちいかわ リピペタ（ラッコ）",
+    "url": "https://chiikawamarket.jp/zh-hant/products/4901770792088",
+    "image": "https://cdn.shopify.com/s/files/1/0626/7142/1681/files/4901770792088_1.jpg?v=1745839941",
+    "id": "46093999866097",
+    "sku": "4901770792088"
+  },
+  {
+    "name": "ちいかわ リピペタ（シーサー）",
+    "url": "https://chiikawamarket.jp/zh-hant/products/4901770792101",
+    "image": "https://cdn.shopify.com/s/files/1/0626/7142/1681/files/4901770792101_1.jpg?v=1745839885",
+    "id": "46093999931633",
+    "sku": "4901770792101"
+  },
+  {
+    "name": "ちいかわ リピペタ（ハチワレ）",
+    "url": "https://chiikawamarket.jp/zh-hant/products/4901770792064",
+    "image": "https://cdn.shopify.com/s/files/1/0626/7142/1681/files/4901770792064_1.jpg?v=1745840001",
+    "id": "46093999800561",
+    "sku": "4901770792064"
+  },
+  {
+    "name": "ちいかわ シャカシャカPOCOPOCO（古本屋）",
+    "url": "https://chiikawamarket.jp/zh-hant/products/4550213567822",
+    "image": "https://cdn.shopify.com/s/files/1/0626/7142/1681/files/4550213567822_1.jpg?v=1745838912",
+    "id": "46093999735025",
+    "sku": "4550213567822"
+  },
+  {
+    "name": "ちいかわ リピペタ（うさぎ）",
+    "url": "https://chiikawamarket.jp/zh-hant/products/4901770792071",
+    "image": "https://cdn.shopify.com/s/files/1/0626/7142/1681/files/4901770792071_1.jpg?v=1745839971",
+    "id": "46093999833329",
+    "sku": "4901770792071"
+  },
+  {
+    "name": "ちいかわ リピペタ（ちいかわ）",
+    "url": "https://chiikawamarket.jp/zh-hant/products/4901770792057",
+    "image": "https://cdn.shopify.com/s/files/1/0626/7142/1681/files/4901770792057_1.jpg?v=1745840036",
+    "id": "46093999767793",
+    "sku": "4901770792057"
+  },
+  {
+    "name": "ちいかわ シャカシャカPOCOPOCO（ちいかわ）",
+    "url": "https://chiikawamarket.jp/zh-hant/products/4550213567785",
+    "image": "https://cdn.shopify.com/s/files/1/0626/7142/1681/files/4550213567785_1.jpg?v=1745839063",
+    "id": "46093999309041",
+    "sku": "4550213567785"
+  },
+  {
+    "name": "ちいかわ シャカシャカPOCOPOCO（モモンガ）",
+    "url": "https://chiikawamarket.jp/zh-hant/products/4550213567815",
+    "image": "https://cdn.shopify.com/s/files/1/0626/7142/1681/files/4550213567815_1.jpg?v=1745838990",
+    "id": "46093999702257",
+    "sku": "4550213567815"
+  },
+  {
+    "name": "ちいかわ シャカシャカPOCOPOCO（うさぎ）",
+    "url": "https://chiikawamarket.jp/zh-hant/products/4550213567808",
+    "image": "https://cdn.shopify.com/s/files/1/0626/7142/1681/files/4550213567808_1.jpg?v=1745839016",
+    "id": "46093999669489",
+    "sku": "4550213567808"
+  },
+  {
+    "name": "ちいかわ シャカシャカPOCOPOCO（ハチワレ）",
+    "url": "https://chiikawamarket.jp/zh-hant/products/4550213567792",
+    "image": "https://cdn.shopify.com/s/files/1/0626/7142/1681/files/4550213567792_1.jpg?v=1745839044",
+    "id": "46093999341809",
+    "sku": "4550213567792"
+  },
+  {
     "name": "ちいかわ レジャーシートL",
     "url": "https://chiikawamarket.jp/zh-hant/products/4901367050515",
     "image": "https://cdn.shopify.com/s/files/1/0626/7142/1681/files/4901367050515_1.jpg?v=1742206437",
